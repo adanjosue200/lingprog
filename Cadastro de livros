@@ -1,0 +1,29 @@
+public class BibliotecaApp {
+
+    public static void main(String[] args) {
+
+
+
+        livro livro1 = new livro("livro de arte", "poker");
+
+        livro livro2 = new Livro("O Hobbit", "J.R.R. Tolkien", true);
+
+        livro livro3 = new livro("1984", "George Orwell");
+
+
+        livro1.emprestar();
+        livro2.emprestar();
+
+
+        livro1.devolver();
+
+
+        livro1.exibirFicha();
+        livro2.exibirFicha();
+        livro3.exibirFicha();
+
+
+
+        System.out.println("Total de livros: " + Livro.getTotalLivros());
+    }
+}
