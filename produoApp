@@ -1,0 +1,78 @@
+public class produto {
+
+    private String nome;
+    private double preco;
+    private int quantidadeEstoque;
+
+
+    private static int totalProdutos = 0;
+
+    public produto() {
+        this.nome = "Produto sem nome";
+        this.preco = 0.0;
+        this.quantidadeEstoque = 0;
+        totalProdutos++; // Incrementa a contagem de produtos
+    }
+
+
+    public produto(String nome, double preco, int quantidadeInicial) {
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidadeEstoque = quantidadeInicial;
+        totalProdutos++;
+    }
+
+
+    public static int getTotalProdutos() {
+        return totalProdutos;
+    }
+
+    public void vender(int quantidade) {
+        if (quantidade <= this.quantidadeEstoque) {
+            this.quantidadeEstoque -= quantidade;
+            System.out.println("Venda de " + quantidade + " unidade(s) de '" + this.nome + "' realizada com sucesso.");
+        } else {
+            System.out.println("Estoque insuficiente para vender " + quantidade + " unidade(s) de '" + this.nome + "'.");
+        }
+    }
+
+
+    public void repor(int quantidade) {
+        if (quantidade > 0) {
+            this.quantidadeEstoque += quantidade;
+            System.out.println("Reposição de " + quantidade + " unidade(s) realizada para '" + this.nome + "'.");
+        } else {
+            System.out.println("A quantidade para reposição deve ser maior que zero.");
+        }
+    }
+
+
+    public void exibirDados() {
+        System.out.println("--- Dados do Produto ---");
+        System.out.println("Nome: " + this.nome);
+        System.out.println("Preço: R$ " + String.format("%.2f", this.preco));
+        System.out.println("Quantidade em Estoque: " + this.quantidadeEstoque);
+        System.out.println("=========");
+    }
+
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    public int getQuantidadeEstoque() {
+        return quantidadeEstoque;
+    }
+}
