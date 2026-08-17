@@ -1,0 +1,39 @@
+public class Funcionario {
+    private String nome;
+    private double salario;
+    private int cargaHorariaSemanal;
+    public Funcionario(String nome, double salario, int cargaHorariaSemanal) {
+        setNome(nome);
+        setSalario(salario);
+        setCargaHorariaSemanal(cargaHorariaSemanal);
+    }
+
+    public String getNome() { return nome; }
+    public double getSalario() { return salario; }
+    public int getCargaHorariaSemanal() { return cargaHorariaSemanal; }
+
+
+    public void setNome(String nome) {
+        if (nome != null && !nome.isEmpty() && nome.length() <= 50) {
+            this.nome = nome;
+        } else {
+            System.out.println("Nome invalido!");
+        }
+    }
+
+    public void setSalario(double salario) {
+        if (salario > 0) {
+            this.salario = salario;
+        } else {
+            System.out.println("Salario invalido!");
+        }
+    }
+
+    public void setCargaHorariaSemanal(int cargaHorariaSemanal) {
+        if (cargaHorariaSemanal >= 1 && cargaHorariaSemanal <= 44) {
+            this.cargaHorariaSemanal = cargaHorariaSemanal;
+        } else {
+            System.out.println("Carga horaria invalida!");
+        }
+    }
+}
