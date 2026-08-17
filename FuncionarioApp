@@ -1,0 +1,25 @@
+public class FuncionarioApp {
+    public static void main(String[] args) {
+
+        Funcionario f1 = new Funcionario("Carlos", 3000, 40);
+        Funcionario f2 = new Funcionario("Ana", 4000, 44);
+
+
+        System.out.println("--- Antes ---");
+        System.out.println(f1.getNome() + " | R$ " + f1.getSalario() + " | " + f1.getCargaHorariaSemanal() + "h");
+
+
+        f1.setNome("Carlos Silva");
+        f1.setSalario(3500);
+        f1.setCargaHorariaSemanal(30);
+
+
+        f1.setNome("Nome com mais de 50 caracteres para testar a validacao do setter");
+        f1.setSalario(-100);
+        f1.setCargaHorariaSemanal(50);
+
+
+        System.out.println("\n--- Depois ---");
+        System.out.println(f1.getNome() + " | R$ " + f1.getSalario() + " | " + f1.getCargaHorariaSemanal() + "h");
+    }
+}
