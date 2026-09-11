@@ -1,0 +1,367 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f7;
+    color: #333;
+}
+
+
+ 
+.navbar {
+    height: 65px;
+       background: linear-gradient(
+        135deg,
+        #000,
+        #000,
+        #f00
+    );
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+
+/* Logo */
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+/* Pesquisa */
+
+.search input {
+    width: 300px;
+
+    padding: 10px 15px;
+
+    border: 1px solid #ddd;
+    border-radius: 20px;
+
+    outline: none;
+}
+
+
+/* Ícones */
+
+.nav-icons {
+    display: flex;
+    gap: 20px;
+
+    font-size: 20px;
+}
+
+.nav-icons span {
+    cursor: pointer;
+}
+
+
+/* Layout principal */
+
+.container {
+    max-width: 1200px;
+
+    margin: 30px auto;
+
+    display: grid;
+
+    grid-template-columns: 250px 1fr;
+
+    gap: 30px;
+
+    padding: 0 20px;
+}
+
+
+/* Menu lateral */
+
+.sidebar {
+    background-color: white;
+
+    border-radius: 10px;
+
+    padding: 20px;
+
+    height: fit-content;
+}
+
+
+/* Perfil pequeno */
+
+.profile-mini {
+    text-align: center;
+
+    padding-bottom: 20px;
+
+    border-bottom: 1px solid #eee;
+}
+
+.profile-image {
+    width: 70px;
+    height: 70px;
+
+    background-color: #ddd;
+
+    border-radius: 50%;
+
+    margin: 0 auto 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+}
+
+.profile-mini h3 {
+    margin-bottom: 5px;
+}
+
+.profile-mini p {
+    color: #888;
+}
+
+
+/* Menu */
+
+.sidebar nav {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-top: 15px;
+}
+
+.sidebar nav a {
+    text-decoration: none;
+
+    color: #333;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    transition: 0.2s;
+}
+
+.sidebar nav a:hover {
+    background-color: #f0f2f5;
+}
+
+
+/* Feed */
+
+.feed {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* Criar publicação */
+
+.create-post {
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.create-post h2 {
+    font-size: 18px;
+
+    margin-bottom: 15px;
+}
+
+.create-post textarea {
+    width: 100%;
+
+    height: 90px;
+
+    resize: none;
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-family: Arial, sans-serif;
+}
+
+
+/* Opções da publicação */
+
+.post-options {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+.post-options button {
+    padding: 8px 12px;
+
+    border: none;
+
+    background-color: #f0f2f5;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+}
+
+.post-options .publish {
+    margin-left: auto;
+
+    background-color: #1877f2;
+
+    color: white;
+}
+
+
+/* Publicações */
+
+.post {
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Cabeçalho da publicação */
+
+.post-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.user-image {
+    width: 45px;
+    height: 45px;
+
+    background-color: #ddd;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.post-header h3 {
+    font-size: 16px;
+}
+
+.post-header small {
+    color: #888;
+}
+
+
+/* Texto */
+
+.post-text {
+    margin: 20px 0;
+
+    line-height: 1.5;
+}
+
+
+/* Botões da publicação */
+
+.post-actions {
+    border-top: 1px solid #eee;
+
+    padding-top: 10px;
+
+    display: flex;
+
+    justify-content: space-around;
+}
+
+.post-actions button {
+    border: none;
+
+    background: none;
+
+    cursor: pointer;
+
+    padding: 8px 15px;
+
+    border-radius: 6px;
+}
+
+.post-actions button:hover {
+    background-color: #f0f2f5;
+}
+
+
+/* Responsividade */
+
+@media (max-width: 800px) {
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .search input {
+        width: 180px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .nav-icons {
+        gap: 10px;
+    }
+
+}
+
