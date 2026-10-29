@@ -1,0 +1,51 @@
+
+import java.util.Stack;
+
+public class VerificarExpressao {
+
+    public static boolean verificar(String expressao) {
+        Stack<Character> pilha = new Stack<>();
+
+        for (int i = 0; i < expressao.length(); i++) {
+            char c = expressao.charAt(i);
+
+            // Abre: adiciona na pilha
+            if (c == '(' || c == '[' || c == '{') {
+                pilha.push(c);
+            }
+
+            // Fecha: verifica se corresponde à abertura
+            else if (c == ')' || c == ']' || c == '}') {
+
+                if (pilha.isEmpty()) {
+                    return false;
+                }
+
+                char topo = pilha.pop();
+
+                if (c == ')' && topo != '(') {
+                    return false;
+                }
+
+                if (c == ']' && topo != '[') {
+                    return false;
+                }
+
+                if (c == '}' && topo != '{') {
+                    return false;
+                }
+            }
+        }
+
+
+        return pilha.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(verificar("(A+B)"));     // true
+        System.out.println(verificar("{[A+B]}"));   // true
+        System.out.println(verificar("([)]"));      // false
+        System.out.println(verificar("(A+B"));      // false
+        System.out.println(verificar("A+B)"));      // false
+    }
+}
